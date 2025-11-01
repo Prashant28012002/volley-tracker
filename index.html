@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🏐 Volleyball Rotation Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🏐 Volleyball Rotation Tracker</h1>
+
+    <!-- Game Setup -->
+    <div class="setup">
+      <label>Team A Name: <input type="text" id="teamA" placeholder="Team A"></label>
+      <label>Team B Name: <input type="text" id="teamB" placeholder="Team B"></label>
+      <label>Set Type:
+        <select id="setType">
+          <option value="15">15 Points</option>
+          <option value="21">21 Points</option>
+        </select>
+      </label>
+      <button id="startBtn">Start Match</button>
+    </div>
+
+    <!-- Player Replacement Section -->
+    <div id="playerSection" class="hidden">
+      <h2>Add / Replace Players (Team A)</h2>
+      <div id="players"></div>
+      <button id="savePlayersBtn">Save Players</button>
+    </div>
+
+    <!-- Game Play -->
+    <div id="gameSection" class="hidden">
+      <h2 id="setInfo"></h2>
+      <div class="scoreboard">
+        <div class="team">
+          <h3 id="teamAName"></h3>
+          <p id="scoreA">0</p>
+          <button class="scoreBtn" onclick="addPoint('A')">+ Point</button>
+        </div>
+        <div class="team">
+          <h3 id="teamBName"></h3>
+          <p id="scoreB">0</p>
+          <button class="scoreBtn" onclick="addPoint('B')">+ Point</button>
+        </div>
+      </div>
+
+      <h3>Current Rotation (Team A)</h3>
+      <div id="rotationGrid" class="rotation"></div>
+
+      <button id="rotateBtn">🔄 Rotate</button>
+      <button id="replaceBtn">🧍‍♂️ Replace Player</button>
+      <div id="result"></div>
+    </div>
+
+    <!-- Points Table -->
+    <div id="pointsTable" class="hidden">
+      <h2>🏆 Match Summary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <button onclick="resetGame()">Restart</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

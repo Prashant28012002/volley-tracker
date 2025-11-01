@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #00b09b, #96c93d);
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+input, select, button {
+  padding: 8px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+  background: #222;
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #444;
+}
+
+.hidden {
+  display: none;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.team h3 {
+  font-size: 1.5em;
+}
+
+.team p {
+  font-size: 2.5em;
+  margin: 10px 0;
+}
+
+.rotation {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.playerBox {
+  background: #444;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #fff;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+th {
+  background: #333;
+}
