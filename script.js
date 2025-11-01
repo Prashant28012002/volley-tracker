@@ -3,14 +3,10 @@ let rotation = [];
 let scoreA = 0, scoreB = 0, setLimit = 15;
 
 document.getElementById("startBtn").addEventListener("click", () => {
-  const teamA = document.getElementById("teamA").value || "Team A";
-  const teamB = document.getElementById("teamB").value || "Team B";
   setLimit = parseInt(document.getElementById("setType").value);
-
   document.getElementById("playerSection").classList.remove("hidden");
   document.getElementById("players").innerHTML = "";
 
-  // Always 6 player slots
   for (let i = 0; i < 6; i++) {
     const div = document.createElement("div");
     div.className = "playerSlot";
@@ -60,14 +56,25 @@ function rotateClockwise() {
   displayRotation();
 }
 
+// Add point logic (auto rotate for Team A)
 function addPoint(team) {
   if (team === "A") {
     scoreA++;
-    rotateClockwise(); // Auto rotate Team A on scoring
+    rotateClockwise();
   } else {
     scoreB++;
   }
+  updateScore();
+}
 
+// Remove point logic (no rotation)
+function removePoint(team) {
+  if (team === "A" && scoreA > 0) scoreA--;
+  if (team === "B" && scoreB > 0) scoreB--;
+  updateScore();
+}
+
+function updateScore() {
   document.getElementById("scoreA").innerText = scoreA;
   document.getElementById("scoreB").innerText = scoreB;
 
@@ -105,4 +112,3 @@ document.getElementById("replaceBtn").addEventListener("click", () => {
     displayRotation();
   }
 });
-  
