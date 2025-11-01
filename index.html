@@ -36,12 +36,18 @@
         <div class="team">
           <h3 id="teamAName"></h3>
           <p id="scoreA">0</p>
-          <button class="scoreBtn" onclick="addPoint('A')">+ Point</button>
+          <div class="scoreButtons">
+            <button class="scoreBtn" onclick="addPoint('A')">+ Point</button>
+            <button class="scoreBtn minus" onclick="removePoint('A')">− Point</button>
+          </div>
         </div>
         <div class="team">
           <h3 id="teamBName"></h3>
           <p id="scoreB">0</p>
-          <button class="scoreBtn" onclick="addPoint('B')">+ Point</button>
+          <div class="scoreButtons">
+            <button class="scoreBtn" onclick="addPoint('B')">+ Point</button>
+            <button class="scoreBtn minus" onclick="removePoint('B')">− Point</button>
+          </div>
         </div>
       </div>
 
@@ -72,3 +78,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+  
