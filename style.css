@@ -48,6 +48,7 @@ button:hover {
   display: flex;
   justify-content: space-around;
   margin: 20px 0;
+  flex-wrap: wrap;
 }
 
 .team h3 {
@@ -57,6 +58,20 @@ button:hover {
 .team p {
   font-size: 2.5em;
   margin: 10px 0;
+}
+
+.scoreButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.scoreBtn {
+  background: #007bff;
+}
+
+.scoreBtn.minus {
+  background: #d9534f;
 }
 
 .rotation {
